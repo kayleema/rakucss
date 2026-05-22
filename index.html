@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RakuCSS CSS that is both raku and beautiful</title>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" type="text/css"> -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <style>
+        %
+        CSS_HERE
+
+        %
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <script>
+        const root = document.documentElement; // The <html> tag
+
+        // 1. Check for saved theme in localStorage on load
+        const savedTheme = localStorage.getItem('theme') || 'auto';
+        root.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+<header>
+    <hgroup>
+        <h1>Raku CSS</h1>
+        <p>Taking <abbr title="Cascading Style Sheets">CSS</abbr> to the highest level of elegance and beauty without the complicated tooling you don't need</p>
+    </hgroup>
+    <nav>
+        <div><a href="#"><strong>RakuCSS</strong></a></div>
+        <ul>
+            <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+            <li><a href="#" data-theme-switcher="light">Light</a></li>
+            <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+            <li><a href="#" data-theme-switcher="parchment">parchment</a></li>
+            <li><a href="#" data-theme-switcher="sakura">sakura</a></li>
+            <li><a href="#" data-theme-switcher="neon">neon</a></li>
+            <li><a href="#" data-theme-switcher="hacker">hacker</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="content" class="container">
+        <article>
+            <h1>The Last CSS Framework You'll Ever Need?</h1>
+            <h2>Classless CSS</h2>
+            <p>
+                If you use HTML semantically, then you can just write your code and leave the theming
+                to <strong>RakuCSS</strong>. <code>article</code> elements display with elegant
+                slightly rounded borders. If you want basic styling just use "p" tags with <strong>strong</strong>
+                for bold, <em>em</em> for italics, etc.
+            </p>
+            <p>
+                In the RakuCSS design system, some classes are available for use, but they are optional, and semantic.
+            </p>
+
+            <h3>Themes for every occasion</h3>
+            <p>
+                RakuCSS has a carefully designed set of themes.
+                We hope one of them fits your needs, but if none suit your fancy, you can make your own
+                by overriding our set of css variable on which the framework is built and everything will match.
+            </p>
+            <p>The following is a list of the built in themes in no particular order</p>
+            <ul>
+                <li><strong>Light</strong> is easy on the eyes yet cheerfull</li>
+                <li><strong>Dark</strong> fits in nicely with other dark mode apps maintaining well balanced contrast
+                </li>
+                <li><strong>Parchment</strong> shows how a warm design and a serif font need not necessarily be banashed
+                    to the realm of websites past
+                </li>
+                <li><strong>Sakura's</strong> graceful charm with make your users fall in love.</li>
+                <li><strong>Neon</strong> for those with their eye on the future we always dreamed of.</li>
+                <li><strong>Hacker</strong> mode harks back to a time before css.</li>
+            </ul>
+            <p>Here is a recipe for castella that IS in a particular order.</p>
+            <ol>
+                <li>Gather the ingredients
+                    <ol>
+                        <li>All purpose flour (100g)</li>
+                        <li>Sugar (100g)</li>
+                        <li>Eggs 4</li>
+                        <li>Mirin (2 Tablespoons / 30mL)</li>
+                        <li>Honey (2 Tablespoons / 30mL)</li>
+                        <li>Oil (2 Tablespoons / 30mL)</li>
+                    </ol>
+                </li>
+                <li>Line an 18cm×18cm pan with parchment paper</li>
+                <li>Sift the flour (100g) into a separate bowl for later</li>
+                <li>Beat eggs (4) and sugar (100g) in a bowl partially submerged in an additional bowl of 40°C water
+                    until ribbons
+                </li>
+                <li>Preheat oven to 180°C</li>
+                <li>Add additional wet ingredients and mix at low speed
+                    <ol>
+                        <li>Mirin (2 Tablespoons / 30mL)</li>
+                        <li>Honey (2 Tablespoons / 30mL)</li>
+                        <li>Oil (2 Tablespoons / 30mL)</li>
+                    </ol>
+                </li>
+                <li>Fold in the flour</li>
+                <li>Pour into lined baking pan</li>
+                <li>Drop the pan from ~10cm onto a hard countertop several times to release bubbles</li>
+                <li>Bake 180°C for 10min then 140°C for 40min</li>
+            </ol>
+            <p> Just flour sugar eggs mirin honey and oil </p>
+            <p>299jpy*100g/1kg + 269jpy*100g/1kg + 325jpy*4/10 + 289jpy*30mL/1000mL + 679jpy*30mL/500g*1.4g/mL +
+                419jpy*30g/900g*0.92g/ml</p>
+
+            <h3>Form elements</h3>
+            <p>
+                RakuCSS strives to maintain beautiful design without sacrificing information density.
+                Inputs nested inside labels are displayed to the right of the label. Otherwise,
+                inputs display below their labels.
+            </p>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+
+                <label for="id">User id (read only)</label>
+                <input readonly name="id" id="id" value="04D6H89Z">
+
+                <label for="disabled">Random disabled input</label>
+                <input disabled name="disabled" id="disabled" placeholder="Because why not?">
+
+                <label for="about">About me</label>
+                <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
+
+                <label><input type="checkbox" name="remember" id="remember">
+                    Remember me</label>
+
+                <label>
+                    <input type="checkbox" name="in-label" id="in-label" checked>
+                    Is this checkbox inside a <code>&lt;label&gt;</code> element?
+                </label>
+
+                <fieldset>
+                    <legend>Choose a cardinal direction:</legend>
+
+                    <label><input type="radio" id="north" name="direction" value="north" checked>
+                        North</label>
+
+                    <label><input type="radio" id="east" name="direction" value="east">
+                        East</label>
+
+                    <label><input type="radio" id="south" name="direction" value="south">
+                        South</label>
+
+                    <label><input type="radio" id="west" name="direction" value="west">
+                        West</label>
+                </fieldset>
+                <input type="submit">
+            </form>
+
+            <h3>Code</h3>
+            <p>
+                Below is some code, you can copy it with <kbd>Ctrl-C</kbd>.
+                Did you know, <code>alert(1)</code> can show an alert in JavaScript!
+            </p>
+            <pre><code>// This logs a message to the console<br>console.log('Hello, world!')</code></pre>
+
+            <p>
+                Do you know about the "samp" tag? It can be used to denote the output of a computer program.
+                <samp>This is sample output from a computer program.</samp>
+            </p>
+
+            <h3>Other Fun elements</h3>
+            <p>Images have subtle rounded corners and have an effective max width of 100% of the page.</p>
+            <img src="./chikurin.jpg" alt="Example image">
+
+            <p>And here's a nicely marked up table!</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Godzilla</td>
+                    <td>2</td>
+                    <td>$299.99</td>
+                </tr>
+                <tr>
+                    <td>Mozilla</td>
+                    <td>10</td>
+                    <td>$100,000.00</td>
+                </tr>
+                <tr>
+                    <td>Quesadilla</td>
+                    <td>1</td>
+                    <td>$2.22</td>
+                </tr>
+                <tr>
+                    <td>Castella</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>This table also has a footer and a caption:</p>
+            <table>
+                <caption>Castella Cost Analysis</caption>
+                <thead>
+                <tr>
+                    <th>Ingredient</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Flour</td>
+                    <td>299 JPY/kg</td>
+                    <td>100 g</td>
+                    <td>29.9 JPY</td>
+                </tr>
+                <tr>
+                    <td>Sugar</td>
+                    <td>269 JPY/kg</td>
+                    <td>100 g</td>
+                    <td>26.9 JPY</td>
+                </tr>
+                <tr>
+                    <td>Eggs</td>
+                    <td>325 JPY/10</td>
+                    <td>4</td>
+                    <td>130 JPY</td>
+                </tr>
+                <tr>
+                    <td>Mirin</td>
+                    <td>289 JPY/L</td>
+                    <td>30 mL</td>
+                    <td>8.67 JPY</td>
+                </tr>
+                <tr>
+                    <td>Honey</td>
+                    <td>679 JPY/500g</td>
+                    <td>30 mL</td>
+                    <td>57.036 JPY</td>
+                </tr>
+                <tr>
+                    <td>Oil</td>
+                    <td>419 JPY/900mL</td>
+                    <td>30 mL</td>
+                    <td>12.8493 JPY</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td><strong>265 JPY</strong></td>
+                </tr>
+                </tfoot>
+            </table>
+            <p><small>You can use a <code>small</code> tag for fine print. Prices as of May 2026. The density of honey is 1.4 g/mL. The density of oil is 0.92 g/mL</small></p>
+
+            <h3>Typography</h3>
+            <blockquote>
+                This is a blockquote. My castela recipe consists of only flour, sugar, eggs, mirin, honey, and oil.
+                Castella is a popular confectionary in Japan tracing back to the influence of Portuguese traders in the age of exloration.
+            </blockquote>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
+                ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare
+                accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu felis feugiat, eu mollis neque
+                elementum. Donec interdum, nisl id dignissim iaculis, felis dui aliquet dui, non fermentum velit lectus
+                ac quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                <strong>This is strong,</strong> this is normal, <b>this is just bold,</b> <em>and this is
+                emphasized!</em> And heck, <a href="/">here</a>'s a link.
+            </p>
+
+            <dl>
+                <dt>HTML description list element:</dt>
+                <dd>The HTML you are reading now is a definition list. Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).</dd>
+                <dt>Glottal stop:</dt>
+                <dd>A type of consonantal sound, produced by obstructing airflow in the glottis</dd>
+                <dt>Momme:</dt>
+                <dd>Part of a system of Japanese units where during the Edo period it was equal to 1⁄10 ryō, but has since been reformed to equal exactly 3.75 grams</dd>
+            </dl>
+
+            <hr>
+
+            <h1>Heading 1 Concerning Headings:</h1>
+            <p>When designing a set of headings, there's a lot to think about.</p>
+            <h2>Heading 2 A design problem</h2>
+            <p>Designing a set of six heading styles that are distinguishable and distinct while maintaining information
+                density is a challenge.
+            <h3>Heading 3 Why</h3>
+            <p>One must balance the design goals of making headings suficiently large and offset from normal text while
+                not taking up so much space that it impacts usability.
+            <p>
+            <h4>Heading 4 The world</h4>
+            <p>Too many modern websites make their headings large an beautiful with typography that takes your breath
+                away yet takes up so much space that you have to scroll around to get to the part you really care about
+                as a user.</p>
+            <h5>Heading 5 Us</h5>
+            <p>RakuCSS dares to be different by being radically reasonable.</p>
+            <h6>Heading 6 Appreciation</h6>
+            <p>Thank you for coming to my "ted talk" about headings</p>
+        </article>
+        <article>
+            <h2>Another Article</h2>
+            <p>
+                Here are some mark elements for your viewing pleasure. They display as appealing badges.
+                While classes are usually not necessary in RakuCSS, here classes <em>can</em> be used to indicate
+                an <em>class=animated</em> or <em>class=success</em> state.
+            </p>
+            <p>
+                <br/>
+                <mark>mark1</mark>
+                <mark class=primary>class=primary</mark>
+                <mark class=warning>class=warning</mark>
+                <mark class=animate>animated mark</mark>
+                <mark class=success>successful</mark>
+                <br/>
+                <br/>
+            </p>
+            <p>To display inputs that combine gracefully with associated buttons, place them in a div or fieldset with
+                role=group</p>
+            <form>
+                <div role="group">
+                    <input title="fb" placeholder="feedback"/>
+                    <button>submit feedback</button>
+                    <button class="secondary">cancel</button>
+                    <button class="delete">delete</button>
+                </div>
+            </form>
+            <p>It also works for dropdown select elements</p>
+            <form>
+                <fieldset role="group">
+                    <select title="language" name="language">
+                        <option value="en">
+                            english
+                        </option>
+                        <option value="ja">
+                            日本語
+                        </option>
+                    </select>
+                    <input type="submit" value="select">
+                </fieldset>
+            </form>
+        </article>
+        <article>
+            <h3>Login</h3>
+            <p>
+                Here is an example of how you might create a compact login form.
+                Note, the three buttons at the bottom are placed into a div so that they display arranged horizontally.
+                The forgot password button has <code>class=secondary</code> and the cancel button has
+                <code>class=delete</code>.
+            </p>
+            <form>
+                <label>Username: <input placeholder="User"/></label>
+                <label>Password: <input type="password" placeholder="Pass"/></label>
+                <input type="submit" value="Login"/>
+            </form>
+            <button>
+                Create Account
+            </button>
+            <button class="secondary">
+                Forgot Password
+            </button>
+            <button class="delete">
+                Cancel
+            </button>
+        </article>
+    </section>
+    <section>
+        <p>
+            Finally, when everything is said and done you can use a "footer" element with another "nav" element at the
+            end of the page.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <p><strong>EndgameCSS</strong> &nbsp;&nbsp;&nbsp; &copy; 2026 All rights reserved.</p>
+    <p><small>This would be a good place to put links to various things like the terms of use, privacy policy,
+        etc.</small></p>
+</footer>
+
+</body>
+<script>
+    // 2. Add click listeners to your <a> tags
+    const themeLinks = document.querySelectorAll('[data-theme-switcher]');
+    themeLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop the "#" from jumping the page
+
+            const theme = link.getAttribute('data-theme-switcher');
+
+            // Apply the theme to the HTML element
+            root.setAttribute('data-theme', theme);
+
+            // Save the choice
+            localStorage.setItem('theme', theme);
+        });
+    });
+</script>
+</html>
