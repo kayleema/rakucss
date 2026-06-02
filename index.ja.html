@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>RakuCSS 楽で美しいCSS</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <script>
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || 'auto';
+        root.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+
+<body>
+<header>
+    <hgroup>
+        <p style="float:right;">日本語・<a href="index.html">English</a></p>
+        <h1>
+<!--            <img src="favicon.png" alt="favicon" style="height: 32px; image-rendering: pixelated;"/> -->
+            Raku CSS
+        </h1>
+        <p>
+            余計な複雑さを払拭し、<abbr title="Cascading Style Sheets">CSS</abbr>を究極の洗練と美しさへと引き上げます。
+        </p>
+    </hgroup>
+    <nav>
+        <div><a href="#"><strong>RakuCSS</strong></a></div>
+        <ul>
+            <li><a href="#" data-theme-switcher="auto">自動</a></li>
+            <li><a href="#" data-theme-switcher="light">ライト</a></li>
+            <li><a href="#" data-theme-switcher="dark">ダーク</a></li>
+            <li><a href="#" data-theme-switcher="parchment">懐古</a></li>
+            <li><a href="#" data-theme-switcher="sakura">桜</a></li>
+            <li><a href="#" data-theme-switcher="neon">ネオン</a></li>
+            <li><a href="#" data-theme-switcher="hacker">ハッカー</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <article>
+            <h1>これが最強なCSSフレームワーク？</h1>
+            <h2>クラスレスCSS</h2>
+            <p>
+                HTMLをセマンティックに使えば、コードを書くだけでテーマは
+                <strong>RakuCSS</strong>に任せられます。<code>article</code>要素は
+                上品な角丸ボーダー付きで表示されます。基本的なスタイリングには「p」タグと
+                <strong>strong</strong>（太字）、<em>em</em>（斜体）などをご利用ください。
+            </p>
+            <p>
+                RakuCSSのデザインシステムでは、いくつかのクラスが利用可能ですが、任意かつセマンティックです。
+            </p>
+
+            <h3>あらゆる場面に合うテーマ</h3>
+            <p>
+                RakuCSSには丁寧に設計されたテーマが揃っています。
+                どれかがご要望に合えば幸いですが、もし合わない場合は
+                フレームワークの基盤となるCSS変数を上書きして独自テーマを作成できます。すべてが揃います。
+            </p>
+            <p>以下は順不同の組み込みテーマ一覧です</p>
+            <ul>
+                <li><strong>ライト</strong>は目に優しく、明るい印象です</li>
+                <li><strong>ダーク</strong>は他のダークモードアプリと馴染み、バランスの取れたコントラストを保ちます</li>
+                <li><strong>懐古</strong>は温かみのあるデザインとセリフフォントが、過去のウェブサイトに追いやられる必要はないことを示しています</li>
+                <li><strong>さくら</strong>の優雅な魅力がユーザーを虜にします。</li>
+                <li><strong>ネオン</strong>は夢見てきた未来を見据える方に。</li>
+                <li><strong>ハッカー</strong>モードはCSS以前の時代へのオマージュです。</li>
+            </ul>
+            <p>こちらは順番が大切なカステラのレシピです。</p>
+            <ol>
+                <li>材料を揃える
+                    <ol>
+                        <li>強力粉（100g）</li>
+                        <li>砂糖（100g）</li>
+                        <li>卵 4個</li>
+                        <li>みりん（大さじ2 / 30mL）</li>
+                        <li>蜂蜜（大さじ2 / 30mL）</li>
+                        <li>サラダ油（大さじ2 / 30mL）</li>
+                    </ol>
+                </li>
+                <li>18cm×18cmの型にクッキングシートを敷く</li>
+                <li>強力粉（100g）を別のボウルにふるっておく</li>
+                <li>40°Cのお湯を張ったボウルに部分的に浸したボウルで卵（4個）と砂糖（100g）をリボン状になるまで泡立てる</li>
+                <li>オーブンを180°Cに予熱する</li>
+                <li>残りの液体材料を加えて低速で混ぜる
+                    <ol>
+                        <li>みりん（大さじ2 / 30mL）</li>
+                        <li>蜂蜜（大さじ2 / 30mL）</li>
+                        <li>サラダ油（大さじ2 / 30mL）</li>
+                    </ol>
+                </li>
+                <li>強力粉を折り混ぜる</li>
+                <li>クッキングシートを敷いた型に流し込む</li>
+                <li>型を~10cmの高さから硬い台に数回落として気泡を抜く</li>
+                <li>180°Cで10分、その後140°Cで40分焼く</li>
+            </ol>
+
+            <h3>フォーム要素</h3>
+            <p>
+                RakuCSSは情報密度を犠牲にせず、美しいデザインを維持します。
+                ラベル内にネストされた入力欄はラベルの右側に表示されます。
+                それ以外の入力欄はラベルの下に表示されます。
+            </p>
+            <form>
+                <label for="email">メールアドレス</label>
+                <input type="email" name="email" id="email" placeholder="taro.yamada@gmail.com">
+
+                <label for="id">ユーザーID（読み取り専用）</label>
+                <input readonly name="id" id="id" value="04D6H89Z">
+
+                <label for="disabled">無効化された入力欄のサンプル</label>
+                <input disabled name="disabled" id="disabled" placeholder="なんとなく">
+
+                <label for="about">自己紹介</label>
+                <textarea name="about" id="about" placeholder="テキストエリアです..."></textarea>
+
+                <label><input type="checkbox" name="remember" id="remember">
+                    ログイン情報を記憶する</label>
+
+                <label for="monster">
+                    ドロップダウン：
+                </label>
+                <select id="monster" name="monster">
+                    <option value="unselected">有名なモンスターを挙げてください</option>
+                    <option value="godzilla">ゴジラ</option>
+                    <option value="frankenstein">フランケンシュタインの怪物</option>
+                    <option value="dracula">ドラキュラ</option>
+                </select>
+
+                <label>
+                    <input type="checkbox" name="in-label" id="in-label" checked>
+                    <span>このチェックボックスは<code>&lt;label&gt;</code>要素の中にありますか？</span>
+                </label>
+
+                <fieldset>
+                    <legend>方角を選んでください：</legend>
+
+                    <label><input type="radio" id="north" name="direction" value="north" checked>
+                        北</label>
+
+                    <label><input type="radio" id="east" name="direction" value="east">
+                        東</label>
+
+                    <label><input type="radio" id="south" name="direction" value="south">
+                        南</label>
+
+                    <label><input type="radio" id="west" name="direction" value="west">
+                        西</label>
+                </fieldset>
+                <input type="submit">
+            </form>
+
+            <h3>コード</h3>
+            <p>
+                以下はコードのサンプルです。<kbd>Ctrl-C</kbd>でコピーできます。
+                JavaScriptでは<code>alert(1)</code>でアラートを表示できます。
+            </p>
+            <pre><code>// コンソールにメッセージを出力します<br>console.log('Hello, world!')</code></pre>
+
+            <p>
+                「samp」タグをご存知ですか？コンピュータプログラムの出力を示すのに使えます。
+                <samp>これはコンピュータプログラムのサンプル出力です。</samp>
+            </p>
+
+            <h3>その他の便利な要素</h3>
+            <p>画像には微妙な角丸が付き、ページ幅の100%を最大幅として表示されます。</p>
+            <img src="./chikurin.jpg" alt="サンプル画像">
+
+            <p>きれいにマークアップされたテーブルもあります！</p>
+            <table>
+                <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>数量</th>
+                    <th>価格</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>ゴジラ</td>
+                    <td>2</td>
+                    <td>$299.99</td>
+                </tr>
+                <tr>
+                    <td>モジラ</td>
+                    <td>10</td>
+                    <td>$100,000.00</td>
+                </tr>
+                <tr>
+                    <td>モッツァレッラ</td>
+                    <td>1</td>
+                    <td>$2.22</td>
+                </tr>
+                <tr>
+                    <td>カステラ</td>
+                    <td>1</td>
+                    <td>265円</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>このテーブルにはフッターとキャプションもあります：</p>
+            <div class="overflow">
+            <table>
+                <caption>カステラ原価分析</caption>
+                <thead>
+                <tr>
+                    <th>材料</th>
+                    <th>単価</th>
+                    <th>使用量</th>
+                    <th>合計</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>薄力粉</td>
+                    <td>299円/kg</td>
+                    <td>100g</td>
+                    <td>29.9円</td>
+                </tr>
+                <tr>
+                    <td>砂糖</td>
+                    <td>269円/kg</td>
+                    <td>100g</td>
+                    <td>26.9円</td>
+                </tr>
+                <tr>
+                    <td>卵</td>
+                    <td>325円/10個</td>
+                    <td>4個</td>
+                    <td>130円</td>
+                </tr>
+                <tr>
+                    <td>みりん</td>
+                    <td>289円/L</td>
+                    <td>30mL</td>
+                    <td>8.67円</td>
+                </tr>
+                <tr>
+                    <td>はちみつ</td>
+                    <td>679円/500g</td>
+                    <td>30mL</td>
+                    <td>57.036円</td>
+                </tr>
+                <tr>
+                    <td>油</td>
+                    <td>419円/900mL</td>
+                    <td>30mL</td>
+                    <td>12.8493円</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="3">合計</th>
+                    <th>265円</th>
+                </tr>
+                </tfoot>
+            </table>
+            </div>
+            <p><small><code>small</code>タグは注釈に使えます。価格は2026年5月時点のものです。はちみつの密度は1.4g/mL、油の密度は0.92g/mLです</small></p>
+
+            <h3>タイポグラフィ</h3>
+            <blockquote>
+                これはブロッククォートです。私のカステラレシピは薄力粉・砂糖・卵・みりん・はちみつ・油だけで作ります。
+                カステラは日本で人気の菓子で、大航海時代にポルトガル商人の影響を受けて広まりました。
+            </blockquote>
+            <p>
+                色は匂へど散りぬるを我が世誰ぞ常ならむ有為の奥山今日越えて浅き夢見し酔ひもせず
+                <strong>これは強調、</strong>これは通常テキスト、<b>これは太字、</b> <em>そしてこれは斜体！</em> そして<a href="/">こちら</a>はリンクです。
+            </p>
+
+            <details>
+                <summary>これは要約です</summary>
+                <p>これはdetails要素です。ユーザーがsummary要素をクリックすると、追加情報を表示するために使用できます。</p>
+            </details>
+
+            <dl>
+                <dt>HTML説明リスト要素：</dt>
+                <dd>今読んでいるこのHTMLは定義リストです。用語集の実装やメタデータ（キーと値のペアのリスト）の表示によく使われます。</dd>
+                <dt>声門閉鎖音：</dt>
+                <dd>声門で気流を遮断することで生成される子音の一種</dd>
+                <dt>匁（もんめ）：</dt>
+                <dd>江戸時代に1両の1⁄10に相当した日本の旧単位系の一つで、現在は正確に3.75グラムに改定されています</dd>
+            </dl>
+
+            <hr>
+
+            <h1>見出しについての見出し1：</h1>
+            <p>見出しのセットを設計する際、考慮すべきことが多くあります。</p>
+            <h2>見出し2 デザインの課題</h2>
+            <p>情報密度を保ちながら、識別可能で区別できる6つの見出しスタイルのセットを設計することは難しい課題です。
+            <h3>見出し3 その理由</h3>
+            <p>見出しを通常テキストから十分に大きくしてオフセットしつつ、ユーザビリティを損なうほどスペースを取らないようにバランスを取る必要があります。
+            <p>
+            <h4>見出し4 世界の現状</h4>
+            <p>多くの現代ウェブサイトでは、見出しを大きく美しく息を呑むほどの印象的なタイポグラフィにしていますが、スペースを取りすぎてユーザーが本当に必要な部分にたどり着くためにスクロールしなければなりません。</p>
+            <h5>見出し5 私たちのアプローチ</h5>
+            <p>RakuCSSは徹底的に合理的であることで違いを示します。</p>
+            <h6>見出し6 感謝</h6>
+            <p>見出しについての「TEDトーク」にお付き合いいただきありがとうございました</p>
+        </article>
+        <article>
+            <h2>別のarticle</h2>
+            <p>
+                こちらはmark要素のサンプルです。魅力的なバッジとして表示されます。
+                RakuCSSでは通常クラスは不要ですが、ここでは<em>class=animated</em>や
+                <em>class=success</em>の状態を示すためにクラスを<em>使用できます</em>。
+            </p>
+            <p>
+                <mark>mark1</mark>
+                <mark class=primary>class=primary</mark>
+                <mark class=warning>class=warning</mark>
+                <mark class=animate>アニメーション</mark>
+                <mark class=success>成功</mark>
+            </p>
+            <p>入力欄とボタンを組み合わせて表示するには、role=groupを持つdivまたはfieldsetの中に配置してください</p>
+            <form>
+                <div role="group">
+                    <input title="fb" placeholder="入力"/>
+                    <button>送信</button>
+                    <button class="secondary">キャンセル</button>
+                    <button class="delete">削除</button>
+                </div>
+            </form>
+            <p>ドロップダウンのselectでも同様に機能します</p>
+            <form>
+                <fieldset role="group">
+                    <select title="language" name="language">
+                        <option value="en">
+                            English
+                        </option>
+                        <option value="ja">
+                            日本語
+                        </option>
+                    </select>
+                    <input type="submit" value="選択">
+                </fieldset>
+            </form>
+        </article>
+        <article>
+            <h3>ログイン</h3>
+            <p>
+                コンパクトなログインフォームの例です。
+                下部の3つのボタンはdivの中に配置されているため、横並びに表示されます。
+                パスワードを忘れたボタンには<code>class=secondary</code>、キャンセルボタンには
+                <code>class=delete</code>が付いています。
+            </p>
+            <form>
+                <label>ユーザー名: <input placeholder="ユーザー名"/></label>
+                <label>パスワード: <input type="password" placeholder="パスワード"/></label>
+                <label>好きな食べ物: <select><option>納豆</option><option>ゴーヤ</option><option>とろろ</option></select></label>
+                <input type="submit" value="ログイン"/>
+            </form>
+            <button>
+                アカウントを作成
+            </button>
+            <button class="secondary">
+                パスワードを忘れた
+            </button>
+            <button class="delete">
+                キャンセル
+            </button>
+        </article>
+
+        <article>
+            <p><code>aria-busy=true</code>でローディング状態を示す例</p>
+            <button aria-busy="true">
+                読み込み中
+            </button>
+        </article>
+
+        <article>
+            <header>カードの例</header>
+            <p>こちらはデータです</p>
+            <ul>
+                <li>項目 1</li>
+                <li>項目 2</li>
+                <li>
+                    Roadmap
+                    <ul>
+                        <li>Styled Dropdown Support</li>
+                        <li>Loading Spinners</li>
+                        <li>Modal</li>
+                        <li>Tooltips</li>
+                        <li>Radio Buttons</li>
+                        <li>role="switch" Checkboxes</li>
+                        <li>multiselect styling</li>
+                        <li>aria-invalid</li>
+                        <li>indeterminate checkboxes</li>
+                        <li>Figure elements</li>
+                        <li>mark for highlighting</li>
+                        <li>Figures</li>
+                    </ul>
+                </li>
+            </ul>
+            <footer>カードのフッターは意図的に空白のままです</footer>
+        </article>
+    </section>
+    <section>
+        <p>
+            最後に、すべてが終わったらページの末尾に「footer」要素と「nav」要素を使えます。
+        </p>
+    </section>
+</main>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">概要</a></li>
+            <li><a href="#">ドキュメント</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+        </ul>
+    </nav>
+    <p><strong>EndgameCSS</strong> &nbsp;&nbsp;&nbsp; &copy; 2026 全著作権所有。</p>
+    <p><small>利用規約・プライバシーポリシーなどへのリンクを置くのに適した場所です。</small></p>
+</footer>
+
+</body>
+<script>
+    const themeLinks = document.querySelectorAll('[data-theme-switcher]');
+    themeLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const theme = link.getAttribute('data-theme-switcher');
+            root.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    });
+</script>
+</html>

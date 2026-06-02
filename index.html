@@ -3,21 +3,12 @@
 
 <head>
     <title>RakuCSS CSS that is both raku and beautiful</title>
-
-    <!-- <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" type="text/css"> -->
     <link rel="stylesheet" href="./style.css" type="text/css">
-    <style>
-        %
-        CSS_HERE
-
-        %
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="utf-8">
     <script>
-        const root = document.documentElement; // The <html> tag
-
-        // 1. Check for saved theme in localStorage on load
+        const root = document.documentElement;
         const savedTheme = localStorage.getItem('theme') || 'auto';
         root.setAttribute('data-theme', savedTheme);
     </script>
@@ -26,8 +17,14 @@
 <body>
 <header>
     <hgroup>
-        <h1>Raku CSS</h1>
-        <p>Taking <abbr title="Cascading Style Sheets">CSS</abbr> to the highest level of elegance and beauty without the complicated tooling you don't need</p>
+        <p style="float:right;"><a href="index.ja.html">日本語</a>・English</p>
+        <h1>
+<!--            <img src="favicon.png" alt="favicon" style="height: 32px; image-rendering: pixelated;"/> -->
+            Raku CSS
+        </h1>
+        <p>
+            Taking <abbr title="Cascading Style Sheets">CSS</abbr> to the highest level of elegance and beauty without the complicated tooling you don't need.
+        </p>
     </hgroup>
     <nav>
         <div><a href="#"><strong>RakuCSS</strong></a></div>
@@ -35,16 +32,16 @@
             <li><a href="#" data-theme-switcher="auto">Auto</a></li>
             <li><a href="#" data-theme-switcher="light">Light</a></li>
             <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-            <li><a href="#" data-theme-switcher="parchment">parchment</a></li>
-            <li><a href="#" data-theme-switcher="sakura">sakura</a></li>
-            <li><a href="#" data-theme-switcher="neon">neon</a></li>
-            <li><a href="#" data-theme-switcher="hacker">hacker</a></li>
+            <li><a href="#" data-theme-switcher="parchment">Parchment</a></li>
+            <li><a href="#" data-theme-switcher="sakura">Sakura</a></li>
+            <li><a href="#" data-theme-switcher="neon">Neon</a></li>
+            <li><a href="#" data-theme-switcher="hacker">Hacker</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <section id="content" class="container">
+    <section>
         <article>
             <h1>The Last CSS Framework You'll Ever Need?</h1>
             <h2>Classless CSS</h2>
@@ -106,9 +103,6 @@
                 <li>Drop the pan from ~10cm onto a hard countertop several times to release bubbles</li>
                 <li>Bake 180°C for 10min then 140°C for 40min</li>
             </ol>
-            <p> Just flour sugar eggs mirin honey and oil </p>
-            <p>299jpy*100g/1kg + 269jpy*100g/1kg + 325jpy*4/10 + 289jpy*30mL/1000mL + 679jpy*30mL/500g*1.4g/mL +
-                419jpy*30g/900g*0.92g/ml</p>
 
             <h3>Form elements</h3>
             <p>
@@ -132,9 +126,19 @@
                 <label><input type="checkbox" name="remember" id="remember">
                     Remember me</label>
 
+                <label for="monster">
+                    Dropping down:
+                </label>
+                <select id="monster" name="monster">
+                    <option value="unselected">Can you name a famous monster?</option>
+                    <option value="godzilla">Godzilla</option>
+                    <option value="frankenstein">Frankenstein's Monster</option>
+                    <option value="dracula">Dracula</option>
+                </select>
+
                 <label>
                     <input type="checkbox" name="in-label" id="in-label" checked>
-                    Is this checkbox inside a <code>&lt;label&gt;</code> element?
+                    <span>Is this checkbox inside a <code>&lt;label&gt;</code> element?</span>
                 </label>
 
                 <fieldset>
@@ -199,11 +203,12 @@
                 <tr>
                     <td>Castella</td>
                     <td>1</td>
-                    <td>1</td>
+                    <td>265 JPY</td>
                 </tr>
                 </tbody>
             </table>
             <p>This table also has a footer and a caption:</p>
+            <div class="overflow">
             <table>
                 <caption>Castella Cost Analysis</caption>
                 <thead>
@@ -254,11 +259,12 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td colspan="3"><strong>Total</strong></td>
-                    <td><strong>265 JPY</strong></td>
+                    <th colspan="3">Total</th>
+                    <th>265 JPY</th>
                 </tr>
                 </tfoot>
             </table>
+            </div>
             <p><small>You can use a <code>small</code> tag for fine print. Prices as of May 2026. The density of honey is 1.4 g/mL. The density of oil is 0.92 g/mL</small></p>
 
             <h3>Typography</h3>
@@ -276,6 +282,11 @@
                 <strong>This is strong,</strong> this is normal, <b>this is just bold,</b> <em>and this is
                 emphasized!</em> And heck, <a href="/">here</a>'s a link.
             </p>
+
+            <details>
+                <summary>This is a summary</summary>
+                <p>This is the details element. It can be used to display additional information when a user clicks on a summary element.</p>
+            </details>
 
             <dl>
                 <dt>HTML description list element:</dt>
@@ -314,21 +325,18 @@
                 an <em>class=animated</em> or <em>class=success</em> state.
             </p>
             <p>
-                <br/>
                 <mark>mark1</mark>
                 <mark class=primary>class=primary</mark>
                 <mark class=warning>class=warning</mark>
                 <mark class=animate>animated mark</mark>
                 <mark class=success>successful</mark>
-                <br/>
-                <br/>
             </p>
             <p>To display inputs that combine gracefully with associated buttons, place them in a div or fieldset with
                 role=group</p>
             <form>
                 <div role="group">
                     <input title="fb" placeholder="feedback"/>
-                    <button>submit feedback</button>
+                    <button>send</button>
                     <button class="secondary">cancel</button>
                     <button class="delete">delete</button>
                 </div>
@@ -359,6 +367,7 @@
             <form>
                 <label>Username: <input placeholder="User"/></label>
                 <label>Password: <input type="password" placeholder="Pass"/></label>
+                <label>Favourite Food: <select><option>natto</option><option>goya</option><option>tororo</option></select></label>
                 <input type="submit" value="Login"/>
             </form>
             <button>
@@ -370,6 +379,40 @@
             <button class="delete">
                 Cancel
             </button>
+        </article>
+
+        <article>
+            <p>An example of loading state indicated by <code>aria-busy=true</code></p>
+            <button aria-busy="true">
+                Loading
+            </button>
+        </article>
+
+        <article>
+            <header>Example of a Card</header>
+            <p>Here is some data</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>
+                    Roadmap
+                    <ul>
+                        <li>Styled Dropdown Support</li>
+                        <li>Loading Spinners</li>
+                        <li>Modal</li>
+                        <li>Tooltips</li>
+                        <li>Radio Buttons</li>
+                        <li>role="switch" Checkboxes</li>
+                        <li>multiselect styling</li>
+                        <li>aria-invalid</li>
+                        <li>indeterminate checkboxes</li>
+                        <li>Figure elements</li>
+                        <li>mark for highlighting</li>
+                        <li>Figures</li>
+                    </ul>
+                </li>
+            </ul>
+            <footer>Card footer left intentionally blank</footer>
         </article>
     </section>
     <section>
@@ -396,18 +439,12 @@
 
 </body>
 <script>
-    // 2. Add click listeners to your <a> tags
     const themeLinks = document.querySelectorAll('[data-theme-switcher]');
     themeLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); // Stop the "#" from jumping the page
-
+            e.preventDefault();
             const theme = link.getAttribute('data-theme-switcher');
-
-            // Apply the theme to the HTML element
             root.setAttribute('data-theme', theme);
-
-            // Save the choice
             localStorage.setItem('theme', theme);
         });
     });
