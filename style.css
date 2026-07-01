@@ -931,7 +931,7 @@ details {
 
 code {
     background: var(--bg-surface);
-    padding: 4px;
+    padding: 1px 4px;
     padding-inline: 6px;
     margin-inline: 2px;
     border-radius: 5px;
