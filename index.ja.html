@@ -43,6 +43,23 @@
 <main>
     <section>
         <article>
+            <h2>はじめ方</h2>
+            <p>
+                RakuCSSをプロジェクトに追加するには、<code>&lt;link&gt;</code>タグ一行だけで十分です。
+                セマンティックなHTMLを書けば、あとはRakuCSSがすべてスタイリングします。
+            </p>
+            <p>CDNから直接読み込む場合：</p>
+            <pre><code>&lt;link rel="stylesheet" href="https://css.kaylee.jp/style.css" type="text/css"&gt;</code></pre>
+            <p>または<a href="https://css.kaylee.jp/style.css">style.cssをダウンロード</a>して自前でホストすることもできます。</p>
+            <p>
+                テーマを設定するには、<code>&lt;html&gt;</code>要素に<code>data-theme</code>属性を追加します。
+                利用可能な値：<code>light</code>（ライト）、<code>dark</code>（ダーク）、<code>parchment</code>（懐古）、
+                <code>sakura</code>（桜）、<code>neon</code>（ネオン）、<code>hacker</code>（ハッカー）、
+                <code>auto</code>（システムのライト/ダーク設定に従う）。
+            </p>
+            <pre><code>&lt;html data-theme="sakura"&gt;</code></pre>
+        </article>
+        <article>
             <h1>これが最強なCSSフレームワーク？</h1>
             <h2>クラスレスCSS</h2>
             <p>
